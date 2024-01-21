@@ -13,8 +13,9 @@
 </template>
 
 <script setup>
-const transactions = [
+import { ref } from 'vue';
+const transactions = ref([
   { id: 1, text: 'Flower', amount: -19.99 },
   { id: 2, text: 'Calculator', amount: 20 },
-];
+]);
 </script>

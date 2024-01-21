@@ -3,7 +3,7 @@
   <div class="container">
     <Balance />
     <IncomeExpenses />
-    <TransactionList />
+    <TransactionList :transactions="transactions" />
     <AddTransaction />
   </div>
 </template>
@@ -24,4 +24,13 @@ export default {
     AddTransaction,
   },
 };
+
+import { defineProps } from 'vue';
+
+const props = defineProps({
+  transactions: {
+    type: Array,
+    required: true,
+  },
+});
 </script>
