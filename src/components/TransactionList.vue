@@ -13,9 +13,10 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
-const transactions = ref([
-  { id: 1, text: 'Flower', amount: -19.99 },
-  { id: 2, text: 'Calculator', amount: 20 },
-]);
+import { defineProps } from 'vue';
+const props = defineProps({
+  transactions: {
+    type: Array,
+  },
+});
 </script>
