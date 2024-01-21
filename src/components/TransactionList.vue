@@ -12,15 +12,9 @@
   </ul>
 </template>
 
-<script>
-export default {
-  setup() {
-    const transactions = [
-      { id: 1, text: 'Flower', amount: -19.99 },
-      { id: 2, text: 'Calculator', amount: 20 },
-    ];
-
-    return { transactions };
-  },
-};
+<script setup>
+const transactions = [
+  { id: 1, text: 'Flower', amount: -19.99 },
+  { id: 2, text: 'Calculator', amount: 20 },
+];
 </script>
