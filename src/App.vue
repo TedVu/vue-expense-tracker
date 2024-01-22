@@ -4,7 +4,7 @@
     <Balance :total="total" />
     <IncomeExpenses :income="income" :expenses="expenses" />
     <TransactionList :transactions="transactions" />
-    <AddTransaction />
+    <AddTransaction @transaction-submitted="handleTransactionSubmitted" />
   </div>
 </template>
 
@@ -44,4 +44,8 @@ const expenses = computed(() => {
       return acc + transaction.amount;
     }, 0);
 });
+
+const handleTransactionSubmitted = (transactionData) => {
+  transactions.value.push({});
+};
 </script>
