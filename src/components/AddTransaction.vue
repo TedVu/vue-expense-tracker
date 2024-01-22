@@ -27,6 +27,7 @@ import { ref } from 'vue';
 const text = ref('');
 const amount = ref('');
 const onSubmit = () => {
-  console.log();
+  if (!text.value || !amount.value) {
+  }
 };
 </script>
