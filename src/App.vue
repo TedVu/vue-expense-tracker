@@ -14,8 +14,9 @@ import Balance from './components/Balance.vue';
 import IncomeExpenses from './components/IncomeExpenses.vue';
 import TransactionList from './components/TransactionList.vue';
 import AddTransaction from './components/AddTransaction.vue';
-
+import { v4 as uuidv4 } from 'uuid';
 import { ref, computed } from 'vue';
+import { useToast } from 'vue-toastification';
 const transactions = ref([
   { id: 1, text: 'Flower', amount: -19.99 },
   { id: 2, text: 'Calculator', amount: 20 },
@@ -46,6 +47,12 @@ const expenses = computed(() => {
 });
 
 const handleTransactionSubmitted = (transactionData) => {
-  transactions.value.push({});
+  transactions.value.push({
+    id: uuidv4(),
+    text: transactionData.text,
+    amount: transactionData.amount,
+  });
+
+  useToast().success('Transaction added successfully');
 };
 </script>
